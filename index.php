@@ -12,6 +12,9 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
+//Require the autoload file
+require_once('vendor/autoload.php');
+
 // starting the session
 session_start();
 
@@ -25,6 +28,12 @@ $f3->set('DEBUG', 3);
 $f3 ->route('GET /', function() {
     $view = new Template();
     echo $view ->render('views/article-demo.html');
+});
+
+// Define a route to the demo article
+$f3->route('GET /article', function(){
+    $view = new Template();
+    echo $view->render('views/article-demo.html');
 });
 
 //Run fat free
