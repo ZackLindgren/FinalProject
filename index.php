@@ -32,7 +32,7 @@ $f3 ->route('GET /', function($f3) {
     $f3->set('stubs', $stubs);
 
     $view = new Template();
-    echo $view ->render('views/home.html');
+    echo $view ->render('views/mainpage.html');
 });
 
 // Define a route to the demo article
