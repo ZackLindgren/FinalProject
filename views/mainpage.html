@@ -58,8 +58,8 @@
             <img class="mr-3 w-25 img-thumbnail" src="{{ @article['picture'] }}" alt="Article Image">
             <div class="media-body">
                 <a href="article/{{ @article['article_id'] }}"><h5 class="mt-0">{{ @article['title'] }}</h5></a>
-                 <p>
-                    {{ substr(@article['text'], 0, 200)  }}...
+                 <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 200px;">
+                    {{ @article['text']  }}
                 </p>
             </div>
         </div>
