@@ -68,7 +68,7 @@ class Database
     }
 
     /**
-     * Gets an article from the database using an id
+     * Gets an article's main elements from the database using an id
      *
      * @param int $article_id the id for the requested article
      * @return mixed An array of all the values of the article
@@ -76,8 +76,8 @@ class Database
     function getArticle($article_id)
     {
         //1. Define the query
-        $sql = "SELECT * FROM article
-                WHERE article_id = :id";
+        $sql = "SELECT title, username, text, picture, article_date FROM article, users
+                WHERE article_id = :id AND article.author = users.user_id";
 
         //2. Prepare the statement
         $statement = $this->_dbh->prepare($sql);
