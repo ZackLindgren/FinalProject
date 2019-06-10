@@ -58,9 +58,9 @@
             <img class="mr-3 w-25 img-thumbnail" src="{{ @article['picture'] }}" alt="Article Image">
             <div class="media-body">
                 <a href="article/{{ @article['article_id'] }}"><h5 class="mt-0">{{ @article['title'] }}</h5></a>
-                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus
-                odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
-                fringilla. Donec lacinia congue felis in faucibus.
+                 <p>
+                    {{ substr(@article['text'], 0, 200)  }}
+                </p>
             </div>
         </div>
     </repeat>
