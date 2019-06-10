@@ -1,7 +1,7 @@
 <?php
 
-$user = $_SERVER['USER'];
-require "/home/$user/config-final.php";
+//$user = $_SERVER['USER'];   used for swapping back and forth
+require "/home/zlindgre/config-final.php";
 
 /**
  * The Database class that works with the final project database
