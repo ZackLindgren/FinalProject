@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Civilization World Tribune</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -23,15 +23,21 @@
         <ul class="navbar-nav mr-auto">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Sort By:
+                    Regions
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Wonders</a>
-                    <a class="dropdown-item" href="#">Construction</a>
-                    <a class="dropdown-item" href="#">Religion</a>
-                    <a class="dropdown-item" href="#">Conquest</a>
-                    <a class="dropdown-item" href="#">Discovery</a>
+                    <a class="dropdown-item" href="#">India</a>
+                    <a class="dropdown-item" href="#">China</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">World Regions</a>
                 </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">War Stories</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#">Culture Stories</a>
             </li>
 
             <li class="nav-item">
@@ -49,10 +55,12 @@
 <div>
     <repeat group="{{ @stubs }}" value="{{ @article }}">
         <div class="media">
-            <img class="mr-3" src="{{ @article['picture']}}" alt="The Image" style="width: 200px">
+            <img class="mr-3 w-25 img-thumbnail" src="{{ @article['picture'] }}" alt="Article Image">
             <div class="media-body">
                 <a href="article/{{ @article['article_id'] }}"><h5 class="mt-0">{{ @article['title'] }}</h5></a>
-                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus
+                odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
+                fringilla. Donec lacinia congue felis in faucibus.
             </div>
         </div>
     </repeat>
