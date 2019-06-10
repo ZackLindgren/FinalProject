@@ -44,9 +44,9 @@ class Database
     function addArticle($newArticle)
     {
         //1. Define the query
-        $sql = "INSERT INTO article(title, author, date, text, picture, region, tag, isTrending, isRecent, viewCount)
-                VALUES (':title', ':author', ':date', ':text', ':picture', ':region', ':tag', ':isTrending', 
-                ':isRecent', ':viewCount');";
+        $sql = "INSERT INTO article(title, author, article_date, text, picture, region, tag, isTrending, 
+              isRecent, viewCount) VALUES (:title, :author, :date, :text, :picture, :region, :tag, :isTrending, 
+              :isRecent, :viewCount)";
 
         //2. Prepare the statement
         $statement = $this->_dbh->prepare($sql);
@@ -59,8 +59,8 @@ class Database
         $statement->bindParam(':picture', $newArticle->getPicture(), PDO::PARAM_STR);
         $statement->bindParam(':region', $newArticle->getRegion(), PDO::PARAM_STR);
         $statement->bindParam(':tag', $newArticle->getTag(), PDO::PARAM_STR);
-        $statement->bindParam(':isTrending', $newArticle->isTrending() ? 1 : 0, PDO::PARAM_INT);
-        $statement->bindParam(':isRecent', $newArticle->isRecent() ? 1 : 0, PDO::PARAM_INT);
+        $statement->bindParam(':isTrending', $newArticle->isTrending(), PDO::PARAM_INT);
+        $statement->bindParam(':isRecent', $newArticle->isRecent(), PDO::PARAM_INT);
         $statement->bindParam(':viewCount', $newArticle->getViewCount(), PDO::PARAM_INT);
 
         //4. Execute the statement
@@ -93,6 +93,11 @@ class Database
         return $result;
     }
 
+    /**
+     * Gets all article's base elements from the database
+     *
+     * @return mixed An associative array of all articles base elements
+     */
     function getArticleStubs()
     {
         //1. Define the query

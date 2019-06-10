@@ -23,8 +23,8 @@ class OnlineArticle extends Article
      * @param String $date The date the article was posted
      * @param String $text The text within the article
      * @param String $region The region the article is about
-     * @param boolean $isTrending Tracks if the article is trending or not
-     * @param boolean $isRecent Tracks if the article is recent
+     * @param int $isTrending Tracks if the article is trending or not
+     * @param int $isRecent Tracks if the article is recent
      * @param int $viewCount The articles view count
      * @param String $tag The articles tag
      * @param String $picture The path to the articles picture
@@ -65,7 +65,7 @@ class OnlineArticle extends Article
     /**
      * Gets the isTrending field
      *
-     * @return boolean
+     * @return int
      */
     function isTrending()
     {
@@ -75,7 +75,7 @@ class OnlineArticle extends Article
     /**
      * Sets the isTrending of the article
      *
-     * @param boolean $isTrending The new isTrending for the article
+     * @param int $isTrending The new isTrending for the article
      * @return void
      */
     function setTrending($isTrending)
@@ -86,7 +86,7 @@ class OnlineArticle extends Article
     /**
      * Gets the isRecent of the article
      *
-     * @return boolean
+     * @return int
      */
     function isRecent()
     {
@@ -96,7 +96,7 @@ class OnlineArticle extends Article
     /**
      * Sets the isRecent of the article
      *
-     * @param boolean $isRecent The new isRecent for the article
+     * @param int $isRecent The new isRecent for the article
      * @return void
      */
     function setRecent($isRecent)

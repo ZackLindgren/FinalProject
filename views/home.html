@@ -14,11 +14,13 @@
 
 <div class="card">
     <ul class="list-group list-group-flush">
-        <a href="article/1"><li class="list-group-item">Article 1</li></a>
-        <a href="article/2"><li class="list-group-item">Article 2</li></a>
-        <a href="article/3"><li class="list-group-item">Article 3</li></a>
+        <repeat group="{{ @stubs }}" value="{{ @article }}">
+            <a href="article/{{ @article['article_id'] }}"><li class="list-group-item">{{ @article['title'] }}</li></a>
+        </repeat>
     </ul>
 </div>
+
+<p class="text-center"><a href="form">Add an Article</a></p>
 
 <!-- JavaScript for the Bootstrap 4 -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
