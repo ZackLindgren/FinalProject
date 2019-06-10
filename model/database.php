@@ -101,7 +101,7 @@ class Database
     function getArticleStubs()
     {
         //1. Define the query
-        $sql = "SELECT article_id, title, username FROM article, users
+        $sql = "SELECT article_id, title, username, picture FROM article, users
                 WHERE article.author = users.user_id";
 
         //2. Prepare the statement
