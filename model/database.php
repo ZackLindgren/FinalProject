@@ -92,4 +92,24 @@ class Database
         $result = $statement->fetch(PDO::FETCH_ASSOC);
         return $result;
     }
+
+    function getArticleStubs()
+    {
+        //1. Define the query
+        $sql = "SELECT article_id, title, username FROM article, users
+                WHERE article.author = users.user_id";
+
+        //2. Prepare the statement
+        $statement = $this->_dbh->prepare($sql);
+
+        //3. Bind the parameters
+        // none
+
+        //4. Execute the statement
+        $statement->execute();
+
+        //5. Return the result
+        $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
 }

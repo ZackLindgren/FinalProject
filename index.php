@@ -26,8 +26,9 @@ $f3->set('DEBUG', 3);
 
 //Define a default route
 $f3 ->route('GET /', function() {
+
     $view = new Template();
-    echo $view ->render('views/article.html');
+    echo $view ->render('views/home.html');
 });
 
 // Define a route to the demo article
