@@ -10,7 +10,7 @@
 
 </head>
 <body>
-<h1>The Civilization Herald</h1>
+<a href="#"><h1 class="text-center">Civilization World Tribune</h1></a>
 
 
 <!--navbar-->
@@ -21,9 +21,6 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Dropdown
@@ -44,7 +41,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="form">Create an Article</a>
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
@@ -54,30 +51,34 @@
     </div>
 </nav>
 
-
-<div class="media">
-    <img class="mr-3" src="../images/gandhi.jpg" alt="Generic placeholder image" style="width: 200px">
-    <div class="media-body">
-        <a href="one"><h5 class="mt-0">Media heading</h5></a>
-        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-    </div>
+<!--articles-->
+<div>
+    <repeat group="{{ @stubs }}" value="{{ @article }}">
+        <div class="media">
+            <img class="mr-3" src="../images/gandhi.jpg" alt="Generic placeholder image" style="width: 200px">
+            <div class="media-body">
+                <a href="article/{{ @article['article_id'] }}"><h5 class="mt-0">{{ @article['title'] }}</h5></a>
+                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+            </div>
+        </div>
+    </repeat>
 </div>
 
-<div class="media">
-    <img class="mr-3" src="../images/war.jpg" alt="Generic placeholder image" style="width: 200px">
-    <div class="media-body">
-        <h5 class="mt-0">Media heading</h5>
-        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-    </div>
-</div>
 
-<div class="media">
-    <img class="mr-3" src="../images/war.jpg" alt="Generic placeholder image" style="width: 200px">
-    <div class="media-body">
-        <h5 class="mt-0">Media heading</h5>
-        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-    </div>
-</div>
+
+
+
+
+<!-- JavaScript for the Bootstrap 4 -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 
 </body>
 </html>
